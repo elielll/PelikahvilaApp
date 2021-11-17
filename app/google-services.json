@@ -2,7 +2,8 @@
   "project_info": {
     "project_number": "582715287494",
     "project_id": "authentication-9ff95",
-    "storage_bucket": "authentication-9ff95.appspot.com"
+    "storage_bucket": "authentication-9ff95.appspot.com",
+    "firebase_url": "https://authentication-9ff95-default-rtdb.europe-west1.firebasedatabase.app"
   },
   "client": [
     {

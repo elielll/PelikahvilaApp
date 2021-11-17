@@ -1,16 +1,16 @@
 package reservation.system;
 
 public class User {
-    public String name, email, password;
+    public String fullName, email;
 
     public User()
     {
 
     }
 
-    public User(String name, String email)
+    public User(String fullName, String email)
     {
         this.email=email;
-        this.name=name;
+        this.fullName=fullName;
     }
 }

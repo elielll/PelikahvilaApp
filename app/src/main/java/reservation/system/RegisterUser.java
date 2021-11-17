@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
     private Button registerUser;
     private FirebaseAuth mAuth;
-    private EditText fullName, emailAddress, passWord;
+    private EditText editTextfullName, editTextEmail, editTextPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,56 +31,60 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser=(Button) findViewById(R.id.btnregisterUser);
         registerUser.setOnClickListener(this);
 
-        fullName = (EditText) findViewById(R.id.editTextfullName);
-        emailAddress=(EditText) findViewById(R.id.editTextEmail);
-        passWord=(EditText) findViewById(R.id.editTextPassword);
+        editTextfullName = (EditText) findViewById(R.id.fullName);
+        editTextEmail =(EditText) findViewById(R.id.Email);
+        editTextPassword =(EditText) findViewById(R.id.Password);
     }
 
     @Override
     public void onClick(View view) {
-        registerUser();
+        switch (view.getId()){
+            case R.id.btnregisterUser:
+                registerUser();
+                break;
+        }
     }
 
     private void registerUser()
     {
-        String Name = fullName.getText().toString().trim();
-        String email = emailAddress.getText().toString().trim();
-        String password = passWord.getText().toString().trim();
+        String fullName = editTextfullName.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
         //Tsekataan onko boxeissa jotain, jos ei niin näytetään errorviesti
-        if(Name.isEmpty())
+        if(fullName.isEmpty())
         {
-        fullName.setError("Full name is required!");
-        fullName.requestFocus();
+        editTextfullName.setError("Full name is required!");
+        editTextfullName.requestFocus();
         return;
         }
 
         if(email.isEmpty())
         {
-            emailAddress.setError("Email is required!");
-            emailAddress.requestFocus();
+            editTextEmail.setError("Email is required!");
+            editTextEmail.requestFocus();
             return;
         }
         //katsotaan sisältääkö annettu sähköposti tarvittavat merkit esim @ jne.
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
         {
-            emailAddress.setError("Use valid email");
-            emailAddress.requestFocus();
+            editTextEmail.setError("Use valid email");
+            editTextEmail.requestFocus();
             return;
         }
 
         if(password.isEmpty())
         {
-            passWord.setError("Password is required!");
-            passWord.requestFocus();
+            editTextPassword.setError("Password is required!");
+            editTextPassword.requestFocus();
             return;
         }
 
         //firebase hyväksyy vähintään 6 merkin pituisen salasanan.
         if(password.length()<6)
         {
-            passWord.setError("Password length should be at least 6 characters");
-            passWord.requestFocus();
+            editTextPassword.setError("Password length should be at least 6 characters");
+            editTextPassword.requestFocus();
             return;
         }
 
@@ -89,7 +93,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    User user = new User(Name, email);
+                    User user = new User(fullName, email);
                     //hakee rekisteröityneen henkilön id:n.
                     FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance()
                             .getCurrentUser().getUid())
