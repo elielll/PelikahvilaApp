@@ -27,7 +27,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         reservations = (Button) findViewById(R.id.reservationsID);
         reservations.setOnClickListener(this);
-
     }
 
     @Override
@@ -40,7 +39,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(this,Appointment.class));
                 break;
             case R.id.reservationsID:
-
                 break;
         }
     }
