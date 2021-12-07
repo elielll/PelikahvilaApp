@@ -17,7 +17,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
+import java.text.Format;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Appointment extends AppCompatActivity implements View.OnClickListener{
         private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12;
@@ -25,45 +28,45 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
         EditText etTime;
 
 
-        @Override
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_appointment);
 
-            btn1 = (Button) findViewById(R.id.button26);
+            btn1 = (Button) findViewById(R.id.button1);
             btn1.setOnClickListener(this);
 
-            btn2 = (Button) findViewById(R.id.button27);
+            btn2 = (Button) findViewById(R.id.button2);
             btn2.setOnClickListener(this);
 
-            btn3 = (Button) findViewById(R.id.button28);
+            btn3 = (Button) findViewById(R.id.button3);
             btn3.setOnClickListener(this);
 
-            btn4 = (Button) findViewById(R.id.button29);
+            btn4 = (Button) findViewById(R.id.button4);
             btn4.setOnClickListener(this);
 
-            btn5 = (Button) findViewById(R.id.button30);
+            btn5 = (Button) findViewById(R.id.button5);
             btn5.setOnClickListener(this);
 
-            btn6 = (Button) findViewById(R.id.button31);
+            btn6 = (Button) findViewById(R.id.button6);
             btn6.setOnClickListener(this);
 
-            btn7 = (Button) findViewById(R.id.button32);
+            btn7 = (Button) findViewById(R.id.button7);
             btn7.setOnClickListener(this);
 
-            btn8 = (Button) findViewById(R.id.button33);
+            btn8 = (Button) findViewById(R.id.button8);
             btn8.setOnClickListener(this);
 
-            btn9 = (Button) findViewById(R.id.button34);
+            btn9 = (Button) findViewById(R.id.button9);
             btn9.setOnClickListener(this);
 
-            btn10 = (Button) findViewById(R.id.button35);
+            btn10 = (Button) findViewById(R.id.button10);
             btn10.setOnClickListener(this);
 
-            btn11 = (Button) findViewById(R.id.button36);
+            btn11 = (Button) findViewById(R.id.button11);
             btn11.setOnClickListener(this);
 
-            btn12 = (Button) findViewById(R.id.button37);
+            btn12 = (Button) findViewById(R.id.button12);
             btn12.setOnClickListener(this);
 
 
@@ -101,8 +104,8 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                             Appointment.this, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hour, int minute) {
-                            String time = hour + ":" + minute;
-                            etTime.setText(time);
+                            String time = hour+":"+minute;
+                            etTime.setText(String.format(Locale.getDefault(), "%02d:%02d", hour,minute));
                         }
                     }, hour, minute, true);
                     timePickerDialog.show();
@@ -116,7 +119,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
             //jos keksii jonku paremman ja lyhyemmän keinon tehä tää ni voi tehä, buttoniin 8 asti tehty
 
             switch (v.getId()){
-                case R.id.button26:
+                case R.id.button1:
                     if(btn1.isSelected()) {
 
                         btn1.setSelected(false);
@@ -126,7 +129,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button27:
+                case R.id.button2:
                     if(btn2.isSelected()) {
 
                         btn2.setSelected(false);
@@ -136,7 +139,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button28:
+                case R.id.button3:
                     if(btn3.isSelected()) {
 
                         btn3.setSelected(false);
@@ -146,7 +149,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button29:
+                case R.id.button4:
                     if(btn4.isSelected()) {
 
                         btn4.setSelected(false);
@@ -156,7 +159,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button30:
+                case R.id.button5:
                     if(btn5.isSelected()) {
 
                         btn5.setSelected(false);
@@ -166,7 +169,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button31:
+                case R.id.button6:
                     if(btn6.isSelected()) {
 
                         btn6.setSelected(false);
@@ -176,7 +179,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button32:
+                case R.id.button7:
                     if(btn7.isSelected()) {
 
                         btn7.setSelected(false);
@@ -186,7 +189,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
                     }
                     break;
 
-                case R.id.button33:
+                case R.id.button8:
                     if(btn8.isSelected()) {
 
                         btn8.setSelected(false);
