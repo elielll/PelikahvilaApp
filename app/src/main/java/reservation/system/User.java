@@ -10,6 +10,11 @@ public class User {
     public String table;
     //public FirebaseUser name;
 
+    //tämä tyhjä konstruktori pitää säilyttää täällä
+    public User()
+    {
+
+    }
 
     //konstruktori varaustietojen tallettamista varten firebaseen
     public User(String date,String time, String table)
