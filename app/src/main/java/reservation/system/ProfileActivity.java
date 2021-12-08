@@ -84,13 +84,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.profileID:
-
+                startActivity(new Intent(this, MyInfo.class));
                 break;
             case R.id.appointmentID:
                 startActivity(new Intent(this,Appointment.class));
                 break;
             case R.id.reservationsID:
-                startActivity(new Intent(this, MyInfo.class));
+
                 break;
         }
     }
