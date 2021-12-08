@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
@@ -26,6 +27,10 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
         private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12;
         EditText etDate;
         EditText etTime;
+
+        private FirebaseUser user;
+        private DatabaseReference reference;
+        private String userID;
 
 
     @Override
@@ -209,10 +214,18 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
         String time = etTime.getText().toString().trim();
         String date = etDate.getText().toString().trim();
 
+
+
         //tähä pitäs keksiä joku juttu että tuo pöydän numero vaihtuu sen mukaan mikä on valittu
         // nyt se laittaa aina tuon pöydän 1 iha sama minkä valitsee.
         //Tossa kommentoituna tuo switch jolla se vois ehkä toimia
         String table = btn1.getText().toString().trim();
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+
+
         /*switch (v.getId())
         {
             case R.id.button26:
@@ -229,65 +242,55 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
         }
 
          */
-        //FirebaseUser name = FirebaseAuth.getInstance().getCurrentUser();
 
-        User user = new User(date, time, table);
         // tässäkin jos keksii jonku paremman keinon tehä tuo niin hyvä ku aika pitkä koodin pätkä
         // ja buttoniin 8 asti tehty
         if(btn1.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 1 Reserved!", Toast.LENGTH_LONG).show();
             btn1.setClickable(false); // asetetaan buttoni falseksi ettei sitä voi enää muutta ku varaus tehty
         }
 
         if(btn2.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 2 Reserved!", Toast.LENGTH_LONG).show();
             btn2.setClickable(false);
         }
         if(btn3.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 3 Reserved!", Toast.LENGTH_LONG).show();
             btn3.setClickable(false);
         }
         if(btn4.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 4 Reserved!", Toast.LENGTH_LONG).show();
             btn4.setClickable(false);
         }
         if(btn5.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 5 Reserved!", Toast.LENGTH_LONG).show();
             btn5.setClickable(false);
         }
         if(btn6.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 6 Reserved!", Toast.LENGTH_LONG).show();
             btn6.setClickable(false);
         }
         if(btn7.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 7 Reserved!", Toast.LENGTH_LONG).show();
             btn7.setClickable(false);
         }
         if(btn8.isSelected())
         {
-            FirebaseDatabase.getInstance().getReference("Tables").child(FirebaseAuth.getInstance()
-                    .getCurrentUser().getUid()).setValue(user);
+            FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "Table 8 Reserved!", Toast.LENGTH_LONG).show();
             btn8.setClickable(false);
         }
