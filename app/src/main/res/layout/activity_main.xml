@@ -34,7 +34,9 @@
         android:layout_width="360dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:textAlignment="center"
+        android:drawableLeft="@drawable/ic_login_icon"/>
 
     <TextView
 
@@ -43,6 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="300dp"
+        android:drawableLeft="@drawable/ic_register_icon"
+        android:drawableTint="@color/black"
         android:text="Register"
         android:textSize="20dp"/>
 

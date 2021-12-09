@@ -12,18 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="18dp"
+        android:textSize="25dp"
         android:text="Hello, "
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="@id/reservationsID"/>
     <Button
         android:id="@+id/profileID"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Profile"
+        android:drawableLeft="@drawable/ic_profile_icon"
         app:layout_constraintTop_toBottomOf="@id/hello"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -34,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Appointment"
+        android:drawableLeft="@drawable/ic_appointment_icon"
         app:layout_constraintTop_toBottomOf="@+id/profileID"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -44,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Reservations"
+        android:drawableLeft="@drawable/ic_reservations_icon"
         app:layout_constraintTop_toBottomOf="@id/appointmentID"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -53,7 +56,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
+        android:drawableLeft="@drawable/ic_logout_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservationsID"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
