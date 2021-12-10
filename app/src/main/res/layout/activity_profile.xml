@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background7"
     android:orientation="vertical"
     tools:context=".ProfileActivity">
 
@@ -12,58 +13,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25dp"
         android:text="Hello, "
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@id/reservationsID"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/reservationsID"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textStyle="bold" />
+
     <Button
         android:id="@+id/profileID"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Profile"
-        android:drawableLeft="@drawable/ic_profile_icon"
         android:backgroundTint="@color/teal_200"
-        app:layout_constraintTop_toBottomOf="@id/hello"
+        android:drawableLeft="@drawable/ic_profile_icon"
+        android:text="Profile"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/hello"
+        tools:textStyle="bold" />
 
     <Button
         android:id="@+id/appointmentID"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Appointment"
-        android:drawableLeft="@drawable/ic_appointment_icon"
         android:backgroundTint="@color/teal_200"
-        app:layout_constraintTop_toBottomOf="@+id/profileID"
+        android:drawableLeft="@drawable/ic_appointment_icon"
+        android:text="Appointment"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/profileID"
+        tools:textStyle="bold" />
 
     <Button
         android:id="@+id/reservationsID"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Reservations"
-        android:drawableLeft="@drawable/ic_reservations_icon"
         android:backgroundTint="@color/teal_200"
-        app:layout_constraintTop_toBottomOf="@id/appointmentID"
+        android:drawableLeft="@drawable/ic_reservations_icon"
+        android:text="Reservations"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/appointmentID"
+        tools:textStyle="bold" />
 
     <Button
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:drawableLeft="@drawable/ic_logout_icon"
         android:backgroundTint="@color/teal_200"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:drawableLeft="@drawable/ic_logout_icon"
+        android:text="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reservationsID"/>
+        app:layout_constraintTop_toBottomOf="@id/reservationsID"
+        tools:textStyle="bold" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

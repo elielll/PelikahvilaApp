@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -11,44 +12,48 @@
     <EditText
         android:id="@+id/fullName"
         android:layout_width="360dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="250dp"
-        android:hint="Full Name"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        tools:textStyle="bold" />
 
 
     <EditText
         android:id="@+id/Email"
         android:layout_width="360dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:hint="Email Address"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Email Address"
+        android:inputType="textPersonName"
+        tools:textStyle="bold" />
 
     <EditText
         android:id="@+id/Password"
         android:layout_width="360dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:textStyle="bold" />
 
     <Button
         android:id="@+id/btnregisterUser"
-        android:layout_marginTop="20dp"
         android:layout_width="360dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/teal_200"
+        android:drawableLeft="@drawable/ic_register_icon"
         android:text="Register"
         android:textAlignment="center"
-        android:drawableLeft="@drawable/ic_register_icon"/>
+        tools:textStyle="bold" />
 
 
 </LinearLayout>

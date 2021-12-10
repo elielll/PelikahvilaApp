@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -11,45 +12,49 @@
     <EditText
         android:id="@+id/email"
         android:layout_width="360dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="250dp"
-        android:hint="Email Address"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Email Address"
+        android:inputType="textPersonName"
+        tools:textStyle="bold" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="360dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:textStyle="bold" />
 
     <Button
         android:id="@+id/login"
-        android:layout_marginTop="20dp"
         android:layout_width="360dp"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/teal_200"
+        android:drawableLeft="@drawable/ic_login_icon"
         android:text="Login"
         android:textAlignment="center"
-        android:drawableLeft="@drawable/ic_login_icon"/>
+        tools:textStyle="bold" />
 
     <TextView
 
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="300dp"
+        android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/ic_register_icon"
-        android:drawableTint="@color/teal_700"
+        android:drawableTint="@color/teal_200"
         android:text="Register"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        tools:textStyle="bold" />
 
 
 </LinearLayout>
