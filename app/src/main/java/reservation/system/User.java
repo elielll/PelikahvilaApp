@@ -6,7 +6,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class User {
     public String fullName, email;
-    public String date, time;
 
     //tämä tyhjä konstruktori pitää säilyttää täällä
     public User()

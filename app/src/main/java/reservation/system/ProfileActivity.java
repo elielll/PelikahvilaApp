@@ -90,7 +90,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(this,Appointment.class));
                 break;
             case R.id.reservationsID:
-
+                startActivity(new Intent(this, Reservations.class));
                 break;
         }
     }
