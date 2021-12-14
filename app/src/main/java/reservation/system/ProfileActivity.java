@@ -58,8 +58,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView helloTextView = (TextView) findViewById(R.id.hello);
-
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -67,8 +65,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
                 if(userProfile != null) {
                     String fullName = userProfile.fullName;
-
-                    helloTextView.setText("Hello, " +fullName);
+                    Toast.makeText(ProfileActivity.this, "Hello, "+fullName, Toast.LENGTH_LONG).show();
                 }
             }
 
