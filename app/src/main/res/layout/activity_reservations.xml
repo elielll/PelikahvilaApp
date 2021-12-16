@@ -7,13 +7,19 @@
     android:background="@drawable/background7"
     tools:context=".Reservations">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:src="@drawable/logo2"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="Date:"
+        android:text="You have no reservations"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Time:"
+        android:text=""
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="@id/date"
         app:layout_constraintTop_toBottomOf="@id/date" />
@@ -34,9 +40,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Table:"
+        android:text=""
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="@id/time"
         app:layout_constraintTop_toBottomOf="@id/time" />
+
+    <Button
+        android:id="@+id/removeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_200"
+        android:text="Cancel reservation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

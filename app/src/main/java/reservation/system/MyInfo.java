@@ -21,7 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 public class MyInfo extends AppCompatActivity {
 
 
-    private Button back;
 
     private FirebaseUser user;
     private DatabaseReference reference;
