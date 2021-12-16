@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Reservations extends AppCompatActivity implements View.OnClickListener {
+public class Reservations extends AppCompatActivity  {
 
 
     private FirebaseUser user;
@@ -45,7 +45,16 @@ public class Reservations extends AppCompatActivity implements View.OnClickListe
         final TextView tableText = (TextView) findViewById(R.id.table);
 
         removeBtn = (Button) findViewById(R.id.removeButton);
-        removeBtn.setOnClickListener(this);
+        removeBtn.setVisibility(View.GONE);
+
+        removeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseDatabase.getInstance().getReference("Tables").child(childID).removeValue();
+                Toast.makeText(Reservations.this, "Reservation cancelled!", Toast.LENGTH_LONG).show();
+                removeBtn.setVisibility(View.GONE);
+            }
+        });
 
         referenceTable.orderByChild(userID).addChildEventListener(new ChildEventListener() {
             @Override
@@ -53,30 +62,32 @@ public class Reservations extends AppCompatActivity implements View.OnClickListe
                 Table user = snapshot.getValue(Table.class);
                 childID = snapshot.getKey();
 
-                String date = user.date;
-                String time = user.time;
-                String table = user.table;
+                String date = "Date: " +user.date;
+                String time = "Time: " +user.time;
+                String table = "Table: " +user.table;
 
                 dateText.setText(date);
                 timeText.setText(time);
                 tableText.setText(table);
+                removeBtn.setVisibility(View.VISIBLE);
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                dateText.setText("");
+                timeText.setText("");
+                tableText.setText("");
+            }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                Table user = snapshot.getValue(Table.class);
-                childID = snapshot.getKey();
 
-                String date = user.date;
-                String time = user.time;
-                String table = user.table;
+                String noRes = "You have no reservations";
 
-                dateText.setText(date);
-                timeText.setText(time);
-                tableText.setText(table);
+                dateText.setText(noRes);
+                timeText.setText("");
+                tableText.setText("");
             }
 
             @Override
@@ -89,10 +100,13 @@ public class Reservations extends AppCompatActivity implements View.OnClickListe
 
     }
 
+/*
     @Override
     public void onClick(View view) {
 
         FirebaseDatabase.getInstance().getReference("Tables").child(childID).removeValue();
         Toast.makeText(Reservations.this, "Reservation cancelled!", Toast.LENGTH_LONG).show();
     }
+
+ */
 }

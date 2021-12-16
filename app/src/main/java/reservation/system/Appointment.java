@@ -91,7 +91,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
             final int year = calendar.get(Calendar.YEAR);
             final int month = calendar.get(Calendar.MONTH);
             final int day = calendar.get(Calendar.DAY_OF_MONTH);
-            final int hour = calendar.get(Calendar.HOUR);
+            final int hour = calendar.get(Calendar.HOUR_OF_DAY);
             final int minute = calendar.get(Calendar.MINUTE);
 
             etDate.setOnClickListener(new View.OnClickListener() {
@@ -383,7 +383,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
         if(btn14.isSelected()) {
             table = btn14.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
-            Toast.makeText(Appointment.this, "PS 1 Reserved!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Appointment.this, "PS 2 Reserved!", Toast.LENGTH_LONG).show();
         }
         if(btn15.isSelected()) {
             table = btn15.getText().toString().trim();
