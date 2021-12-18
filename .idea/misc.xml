@@ -13,8 +13,7 @@
         <entry key="..\:/Users/Joose Ahonen/Androidstudioprojects/PelikahvilaApp/app/src/main/res/layout/activity_main.xml" value="0.55" />
         <entry key="..\:/Users/Joose Ahonen/Androidstudioprojects/PelikahvilaApp/app/src/main/res/layout/activity_my_info.xml" value="0.55" />
         <entry key="..\:/Users/Joose Ahonen/Androidstudioprojects/PelikahvilaApp/app/src/main/res/layout/activity_profile.xml" value="0.33" />
-        <entry key="..\:/Users/Joose Ahonen/Androidstudioprojects/PelikahvilaApp/app/src/main/res/layout/activity_register_user.xml" value="0.2" />
-        <entry key="..\:/Users/Joose Ahonen/Androidstudioprojects/PelikahvilaApp/app/src/main/res/layout/activity_reservations.xml" value="0.328125" />
+        <entry key="..\:/Users/Joose Ahonen/Androidstudioprojects/PelikahvilaApp/app/src/main/res/layout/activity_register_user.xml" value="0.55" />
         <entry key="..\:/Users/Miikka/Documents/GitHub/PelikahvilaApp/app/src/main/res/layout/activity_appointment.xml" value="0.28351449275362317" />
         <entry key="..\:/Users/Miikka/Documents/GitHub/PelikahvilaApp/app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/Miikka/Documents/GitHub/PelikahvilaApp/app/src/main/res/layout/activity_my_info.xml" value="0.5" />
@@ -24,7 +23,9 @@
         <entry key="..\:/Users/eliel/AndroidStudioProjects/PelikahvilaApp/app/src/main/res/drawable/button_states.xml" value="0.17291666666666666" />
         <entry key="..\:/Users/eliel/AndroidStudioProjects/PelikahvilaApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17291666666666666" />
         <entry key="..\:/Users/eliel/AndroidStudioProjects/PelikahvilaApp/app/src/main/res/layout/activity_appointment.xml" value="0.1609375" />
+        <entry key="..\:/Users/eliel/AndroidStudioProjects/PelikahvilaApp/app/src/main/res/layout/activity_main.xml" value="0.10054347826086957" />
         <entry key="..\:/Users/eliel/AndroidStudioProjects/PelikahvilaApp/app/src/main/res/layout/activity_profile.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/eliel/AndroidStudioProjects/PelikahvilaApp/app/src/main/res/layout/activity_register_user.xml" value="0.1640625" />
         <entry key="..\:/Users/eliel/AndroidStudioProjects/ReservationSystem/app/src/main/res/layout/activity_main.xml" value="0.165625" />
         <entry key="..\:/Users/eliel/AndroidStudioProjects/ReservationSystem/app/src/main/res/layout/activity_register_user.xml" value="0.1796875" />
       </map>

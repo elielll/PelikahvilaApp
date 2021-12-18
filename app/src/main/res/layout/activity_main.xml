@@ -48,7 +48,7 @@
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="272dp"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/ic_register_icon"
         android:drawableTint="@color/teal_200"
