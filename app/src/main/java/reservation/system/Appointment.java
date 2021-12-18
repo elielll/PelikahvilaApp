@@ -40,10 +40,6 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_appointment);
 
-            tables.add(btn1);tables.add(btn2);tables.add(btn3);tables.add(btn4);tables.add(btn5);
-            tables.add(btn6);tables.add(btn7);tables.add(btn8);tables.add(btn9);tables.add(btn10);
-            tables.add(btn11);tables.add(btn12);tables.add(btn16);tables.add(btn14);
-
             btn1 = (Button) findViewById(R.id.button1);
             btn1.setOnClickListener(this);
 
@@ -271,43 +267,43 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
             table = btn9.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "PC 9 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            btn9.setClickable(false);
         }
         else if(btn10.isSelected()) {
             table = btn10.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "PC 10 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            btn10.setClickable(false);
         }
         else if(btn11.isSelected()) {
             table = btn11.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "PC 11 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            btn11.setClickable(false);
         }
         else if(btn12.isSelected()) {
             table = btn12.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "PC 12 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            btn12.setClickable(false);
         }
         else if(btn16.isSelected()) {
             table = btn16.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
             Toast.makeText(Appointment.this, "PS 1 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            btn16.setClickable(false);
         }
         else if(btn14.isSelected()) {
             table = btn14.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
-            Toast.makeText(Appointment.this, "PS 1 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            Toast.makeText(Appointment.this, "PS 2 Reserved!", Toast.LENGTH_LONG).show();
+            btn14.setClickable(false);
         }
         else if(btn15.isSelected()) {
             table = btn15.getText().toString().trim();
             FirebaseDatabase.getInstance().getReference("Tables").push().setValue(new Table(date, time, table, userID));
-            Toast.makeText(Appointment.this, "PS 1 Reserved!", Toast.LENGTH_LONG).show();
-            btn8.setClickable(false);
+            Toast.makeText(Appointment.this, "PS 3 Reserved!", Toast.LENGTH_LONG).show();
+            btn15.setClickable(false);
         }
         else
         {
