@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
 
                     startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                    finish();
                 }
 
 
