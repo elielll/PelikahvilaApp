@@ -3,6 +3,7 @@ package reservation.system;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -54,28 +55,28 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         //Tsekataan onko boxeissa jotain, jos ei niin näytetään errorviesti
         if(fullName.isEmpty())
         {
-        editTextfullName.setError("Full name is required!");
+        editTextfullName.setError("Syötä etunimi ja sukunimi!");
         editTextfullName.requestFocus();
         return;
         }
 
         if(email.isEmpty())
         {
-            editTextEmail.setError("Email is required!");
+            editTextEmail.setError("Syötä sähköpostiosoite!");
             editTextEmail.requestFocus();
             return;
         }
         //katsotaan sisältääkö annettu sähköposti tarvittavat merkit esim @ jne.
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
         {
-            editTextEmail.setError("Use valid email");
+            editTextEmail.setError("Sähköpostiosoite ei kelpaa!");
             editTextEmail.requestFocus();
             return;
         }
 
         if(password.isEmpty())
         {
-            editTextPassword.setError("Password is required!");
+            editTextPassword.setError("Syötä salasana!");
             editTextPassword.requestFocus();
             return;
         }
@@ -83,7 +84,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         //firebase hyväksyy vähintään 6 merkin pituisen salasanan.
         if(password.length()<6)
         {
-            editTextPassword.setError("Password length should be at least 6 characters");
+            editTextPassword.setError("Salasanan pituus vähintään kuusi merkkiä!");
             editTextPassword.requestFocus();
             return;
         }
@@ -102,18 +103,19 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful())
                             {
-                                Toast.makeText(RegisterUser.this, "User has been registered succesfully!",Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterUser.this, "Käyttäjän rekisteröinti onnistui!",Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(RegisterUser.this, MainActivity.class));
                             }
                             else
                             {
-                                Toast.makeText(RegisterUser.this, "Failed to register. Try again!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterUser.this, "Rekisteröinti ei onnistunut. Yritä uudelleen!", Toast.LENGTH_LONG).show();
                             }
                         }
                     });
                 }
                 else
                 {
-                    Toast.makeText(RegisterUser.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterUser.this, "Rekisteröinti ei onnistunut!", Toast.LENGTH_LONG).show();
                 }
             }
         });

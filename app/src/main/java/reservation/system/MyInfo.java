@@ -55,7 +55,7 @@ public class MyInfo extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MyInfo.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MyInfo.this, "Jotain meni pieleen!", Toast.LENGTH_LONG).show();
             }
         });
 

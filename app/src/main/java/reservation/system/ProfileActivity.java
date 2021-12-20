@@ -65,13 +65,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
                 if(userProfile != null) {
                     String fullName = userProfile.fullName;
-                    Toast.makeText(ProfileActivity.this, "Hello, "+fullName, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileActivity.this, "Terve, "+fullName, Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfileActivity.this, "Jotain meni pieleen!", Toast.LENGTH_LONG).show();
             }
         });
 

@@ -59,19 +59,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String password = editTextPassword.getText().toString().trim();
 
         if(email.isEmpty()) {
-            editTextEmail.setError("Email is required");
+            editTextEmail.setError("Syötä sähköpostiosoite");
             editTextEmail.requestFocus();
             return;
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please enter a valid email!");
+            editTextEmail.setError("Sähköpostiosoite ei kelpaa!");
             editTextEmail.requestFocus();
             return;
         }
 
         if(password.length() < 6) {
-            editTextPassword.setError("Min password lenght is 6 characters!");
+            editTextPassword.setError("Salasanan pituus vähintään kuusi merkkiä!");
             editTextPassword.requestFocus();
             return;
         }
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             else{
-                Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Kirjautuminen epäonnistui! Tarkista tiedot", Toast.LENGTH_LONG).show();
             }
         }
     });

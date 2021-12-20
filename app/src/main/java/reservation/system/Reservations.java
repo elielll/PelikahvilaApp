@@ -51,7 +51,7 @@ public class Reservations extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase.getInstance().getReference("Tables").child(childID).removeValue();
-                Toast.makeText(Reservations.this, "Reservation cancelled!", Toast.LENGTH_LONG).show();
+                Toast.makeText(Reservations.this, "Varaus peruttu!", Toast.LENGTH_LONG).show();
                 removeBtn.setVisibility(View.GONE);
             }
         });
@@ -62,9 +62,9 @@ public class Reservations extends AppCompatActivity  {
                 Table user = snapshot.getValue(Table.class);
                 childID = snapshot.getKey();
 
-                String date = "Date: " +user.date;
-                String time = "Time: " +user.time;
-                String table = "Table: " +user.table;
+                String date = "Päivämäärä: " +user.date;
+                String time = "Kellonaika: " +user.time;
+                String table = "Pelikone: " +user.table;
 
                 dateText.setText(date);
                 timeText.setText(time);
@@ -83,7 +83,7 @@ public class Reservations extends AppCompatActivity  {
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
 
-                String noRes = "You have no reservations";
+                String noRes = "Sinulla ei ole varauksia";
 
                 dateText.setText(noRes);
                 timeText.setText("");
@@ -100,13 +100,4 @@ public class Reservations extends AppCompatActivity  {
 
     }
 
-/*
-    @Override
-    public void onClick(View view) {
-
-        FirebaseDatabase.getInstance().getReference("Tables").child(childID).removeValue();
-        Toast.makeText(Reservations.this, "Reservation cancelled!", Toast.LENGTH_LONG).show();
-    }
-
- */
 }
